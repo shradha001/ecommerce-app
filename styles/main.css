@@ -1,0 +1,44 @@
+body {
+  font-family: "Montserrat";
+}
+
+:root {
+  --pale-grey: #fdfdfd;
+  --french-grey: #bbbbbb;
+  --regent-grey: #908fa0;
+  --deep-carmine-park: #ef233c;
+  --ebony-clay: #2b2d42;
+  --mist-blue: #69717b;
+  --dawn-pink: #e9ecef;
+  --blue-whale: #023047;
+  --selective-yellow: #ffb703;
+  --porcelain: #edf2f4;
+  --catskill-white: #edf6f9;
+
+  --main-font: "Montserrat";
+  --hindi-font: "Jaini Purva", system-ui;
+  --secondary-font: "Dancing Script", cursive;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--pale-grey);
+}
+
+.content {
+  margin-top: 70px;
+}
+
+/*  Styles applied when the viewport width is at least 768px (tablet) */
+@media screen and (min-width: 768px) {
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

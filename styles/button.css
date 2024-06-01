@@ -1,0 +1,17 @@
+.load-more-btn-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.load-more-btn {
+  width: 120px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid;
+  background-color: var(--deep-carmine-park);
+  border-color: var(--deep-carmine-park);
+  color: white;
+  display: none;
+  cursor: pointer;
+}

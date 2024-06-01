@@ -1,0 +1,51 @@
+.loader-container {
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 40%;
+  display: none;
+}
+
+.loader {
+  border: solid var(--catskill-white);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-top: solid var(--deep-carmine-park);
+  border-width: 7px;
+  animation: topBorderRotate 1.8s linear infinite;
+}
+
+@keyframes topBorderRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes topBorderRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*  Styles applied when the viewport width is at least 768px (tablet) */
+@media screen and (min-width: 768px) {
+  .loader-container {
+    left: 45%;
+  }
+
+  .loader {
+    width: 50px;
+    height: 50px;
+    border-width: 9px;
+  }
+}
