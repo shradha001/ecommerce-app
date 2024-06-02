@@ -1,0 +1,113 @@
+.products-sub-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+
+.product-container {
+  width: 170px;
+  height: 240px;
+  border: 1px solid;
+  border-radius: 20px;
+  border-color: var(--french-grey);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.product-img {
+  width: 170px;
+  height: 124px;
+  max-width: 170px;
+  max-height: 124px;
+  min-width: 170px;
+  min-height: 124px;
+  border-radius: 20px;
+  object-fit: contain;
+}
+
+.product-metadata-container {
+  margin-left: 8px;
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.product-title {
+  color: var(--ebony-clay);
+  font-size: 12px;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-price {
+  color: var(--blue-whale);
+  font-size: 12px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.product-ratings-container {
+  font-size: 13px;
+}
+
+.filled-star {
+  color: var(--selective-yellow);
+}
+
+.unfilled-star {
+  color: var(--porcelain);
+}
+
+.no-products-text {
+  margin: 0;
+  color: var(--regent-grey);
+  font-size: 12px;
+  text-align: center;
+  font-style: italic;
+  display: none;
+}
+
+/*  Styles applied when the viewport width is at least 768px (tablet) */
+@media screen and (min-width: 768px) {
+  .products-sub-container {
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+  }
+
+  .product-container {
+    width: 200px;
+  }
+
+  .product-img {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+  .product-metadata-container {
+    margin-left: 30px;
+  }
+}
+
+/* Styles applied when the viewport width is at least 1024px (desktop) */
+@media screen and (min-width: 1024px) {
+  .products-container {
+    width: 90%;
+  }
+  .products-sub-container {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+/* Styles applied when the viewport width is at least 1200px (large desktop) */
+@media screen and (min-width: 1200px) {
+  .products-sub-container {
+    grid-template-columns: auto auto auto auto auto;
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jaini+Purva&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- custom css -->
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/search.css" rel="stylesheet" />
+    <link href="styles/logo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/categories.css" />
+    <link rel="stylesheet" href="styles/product.css" />
+    <link rel="stylesheet" href="styles/button.css" />
+    <link rel="stylesheet" href="styles/loader.css" />
+
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/categories.js"></script>
+    <script src="scripts/products.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Logo : Start -->
+      <div class="logo-container">
+        <h3 class="logo">नागराजा</h3>
+        <p class="tagline">fashion</p>
+      </div>
+      <!-- Logo : End -->
+
+      <div class="content">
+        <!-- Search Bar : Start -->
+        <div class="search-container">
+          <div class="search-icon-container">
+            <div class="search-icon">
+              <p class="search-circle"></p>
+              <div class="search-line"></div>
+            </div>
+          </div>
+          <input
+            type="search"
+            class="search-input-box"
+            id="search-input-box"
+            placeholder="type product name..."
+          />
+        </div>
+        <ul class="search-list" id="search-list"></ul>
+        <!-- Search Bar : End -->
+
+        <!-- Categories : Start -->
+        <div class="categories-container" id="categories-container"></div>
+        <!-- Categories : End -->
+
+        <!-- Products : Start -->
+        <div class="products-loader-container">
+          <div class="loader-container" id="loader-container">
+            <div class="loader" id="loader" />
+          </div>
+        </div>
+        <div class="products-container">
+          <div class="products-sub-container" id="products-sub-container"></div>
+          <div class="load-more-btn-container">
+            <button
+              class="load-more-btn"
+              onclick="loadMore()"
+              id="load-more-btn"
+            >
+              Load More
+            </button>
+          </div>
+          <p class="no-products-text" id="no-products-text">
+            That's all, folks!
+          </p>
+        </div>
+        <!-- Products : End -->
+      </div>
+    </div>
+    <script src="scripts/load-products.js"></script>
+    <script src="scripts/search.js"></script>
+  </body>
+</html>
