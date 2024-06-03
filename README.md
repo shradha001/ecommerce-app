@@ -1,7 +1,8 @@
 # E-Commerce Website
 
-Explore this sample e-commerce site featuring responsive design. No frameworks used, just plain CSS, HTML and JavaScript.
-
+* Explore this sample e-commerce site featuring responsive design. No frameworks used, just plain CSS, HTML and JavaScript.
+* Website deployed [here](https://ecommerce-shoplift.netlify.app)
+  
 ## Description
 
 I'm utilizing the Fake Products API as the backend for this website.
