@@ -21,7 +21,11 @@ const getAllProducts = async () => {
   const limit = pageNumber * defaultLimit;
   requestedLimit = limit;
   showLoaderDiv();
-  return fetchProducts({ limit, category });
+  const queryParams = { limit };
+  if (category) {
+    queryParams["category_id"] = category;
+  }
+  return fetchProducts(queryParams);
 };
 
 const constructProductCard = (data) => {
@@ -40,7 +44,7 @@ const constructProductCard = (data) => {
   //PRODUCT TITLE
   const titleEl = document.createElement("p");
   titleEl.classList.add("product-title");
-  titleEl.textContent = data?.title;
+  titleEl.textContent = data?.product_name;
 
   //PRODUCT PRICE
   const priceEl = document.createElement("p");
@@ -48,7 +52,7 @@ const constructProductCard = (data) => {
   priceEl.textContent = `$${data?.price}`;
 
   //PRODUCT RATINGS
-  const productRating = data?.rating?.rate;
+  const productRating = data?.ratings;
   const ratingsContainer = document.createElement("div");
   ratingsContainer.classList.add("product-ratings-container");
   if (productRating) {
@@ -110,7 +114,8 @@ const showNoProductsText = () => {
 };
 
 const loadProducts = async () => {
-  const response = await getAllProducts();
+  let response = await getAllProducts();
+  response = response?.data;
   let startIndex = pageNumber === 1 ? 0 : (pageNumber - 1) * defaultLimit;
   const slicedCategories = response.slice(startIndex);
   slicedCategories.map((product) => constructProductCard(product));

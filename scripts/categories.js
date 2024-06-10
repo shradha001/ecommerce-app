@@ -1,10 +1,7 @@
 const getCategories = async () => {
-  const categories = await fetchCategories();
-  return categories.map((cat, index) => ({
-    id: index + 1,
-    api_response: cat,
-    name: capitalizeFirstChar(cat),
-  }));
+  let categories = await fetchCategories();
+  categories = categories?.data ?? [];
+  return categories;
 };
 
 const moveSelectedCategoryToAll = (toAll = false) => {
@@ -25,13 +22,13 @@ const constructSubCategoryContainer = (data) => {
   const subContainerDiv = document.createElement("div");
   subContainerDiv.classList.add("sub-category-container");
 
-  const { id, name, api_response } = data;
+  const { id, name, image } = data;
 
   // CATEGORY IMAGE ELEMENT
   const imgElement = document.createElement("img");
   imgElement.classList.add("sub-category-img");
   imgElement.setAttribute("id", "category-img-" + id);
-  imgElement.setAttribute("src", "/assets/categories/" + id + ".jpg");
+  imgElement.setAttribute("src", image);
 
   if (id === 0) {
     imgElement.classList.add("sub-category-img-selected");
@@ -44,7 +41,7 @@ const constructSubCategoryContainer = (data) => {
       selectedCategoryEl.classList.remove("sub-category-img-selected");
     }
     imgElement.classList.add("sub-category-img-selected");
-    loadCategories(api_response);
+    loadCategories(id);
   });
 
   //CATEGORY TITLE
@@ -69,6 +66,7 @@ const appendSubCategoryToContainer = (categoryEl) => {
   categories.unshift({
     id: 0,
     name: "All Categories",
+    image: "/assets/categories/0.jpg",
   });
   categories.map((category) => {
     const categoryEl = constructSubCategoryContainer(category);

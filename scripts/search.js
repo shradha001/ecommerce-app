@@ -5,7 +5,7 @@ const constructSearchList = (items) => {
   items.map((el) => {
     const liEl = document.createElement("li");
     liEl.classList.add("search-list-item");
-    liEl.textContent = el.title;
+    liEl.textContent = el.product_name;
     liEl.addEventListener("click", () => {
       emptySearchValue();
       emptySearchList();
@@ -27,9 +27,9 @@ const emptySearchValue = () => {
 const getProductNameBySearchKeyword = async (keyword) => {
   emptySearchList();
   clearPageCategoryToDefault();
-  const products = await fetchProducts("limit: 20");
-  if (searchQuery && products && products.length > 0) {
-    const filteredWords = filterSimilarWords(products, "title", keyword);
+  const products = await fetchProducts({ q: keyword });
+  if (searchQuery && products && products?.data?.length > 0) {
+    const filteredWords = products.data;
     constructSearchList(filteredWords);
   }
 };

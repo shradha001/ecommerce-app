@@ -1,7 +1,3 @@
-body {
-  font-family: "Montserrat";
-}
-
 :root {
   --pale-grey: #fdfdfd;
   --french-grey: #bbbbbb;
@@ -14,10 +10,21 @@ body {
   --selective-yellow: #ffb703;
   --porcelain: #edf2f4;
   --catskill-white: #edf6f9;
+  --soft-beige: #f2e9e1;
 
   --main-font: "Montserrat";
-  --hindi-font: "Jaini Purva", system-ui;
   --secondary-font: "Dancing Script", cursive;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--soft-beige);
 }
 
 .main-container {
@@ -30,7 +37,7 @@ body {
 }
 
 .content {
-  margin-top: 70px;
+  margin-top: 100px;
 }
 
 /*  Styles applied when the viewport width is at least 768px (tablet) */
