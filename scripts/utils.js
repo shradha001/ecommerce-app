@@ -1,5 +1,6 @@
-const PRODUCTS_API = "https://fakestoreapi.com/products";
-const CATEGORIES_URL = "https://fakestoreapi.com/products/categories";
+const PRODUCTS_API = "https://catalogapi.co/products";
+
+const CATEGORIES_URL = "https://catalogapi.co/categories";
 
 const capitalizeFirstChar = (str) => {
   return str
@@ -30,22 +31,30 @@ const filterSimilarWords = (arr, key, value) => {
 
 /**
  *
- * @param  queryParams
+ * @param  paramsObject
  * eg:
  * {
  *  "limit": number,
  *  "category" : string,
+ *  "q": string
  * }
  */
-const fetchProducts = async (queryParams) => {
+const fetchProducts = async (paramsObject) => {
   let url = PRODUCTS_API;
-  if (queryParams?.category) {
-    url += `/category/${queryParams.category}`;
+  let queryParams = "";
+  for (const key in paramsObject) {
+    queryParams += `${encodeURIComponent(key)}=${encodeURIComponent(
+      paramsObject[key]
+    )}&`;
   }
-  if (queryParams?.limit) {
-    url += `?limit=${queryParams.limit}`;
+  // Remove trailing '&' if exists
+  if (queryParams.length > 0) {
+    queryParams = queryParams.slice(0, -1);
   }
-  const response = await fetch(url);
+
+  const urlWithParams = url + (queryParams ? `?${queryParams}` : "");
+
+  const response = await fetch(urlWithParams);
   return await response.json();
 };
 

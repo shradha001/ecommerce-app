@@ -5,14 +5,16 @@
   width: 100%;
   text-align: center;
   z-index: 999;
+  height: 90px;
+  background-color: var(--soft-beige);
+  padding-bottom: 13px;
 }
 
 .logo {
-  font-family: var(--hindi-font);
-  font-weight: 600;
-  color: var(--deep-carmine-park);
-  margin: 0;
-  font-size: xx-large;
+  margin-top: 5px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
 .tagline {
@@ -21,8 +23,8 @@
   font-size: 22px;
   position: relative;
   transform: rotateZ(-15deg);
-  left: 42px;
-  top: -18px;
+  left: 36px;
+  top: -30px;
   font-weight: 700;
   margin: 0;
 }
