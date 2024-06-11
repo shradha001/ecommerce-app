@@ -10,7 +10,7 @@
   --selective-yellow: #ffb703;
   --porcelain: #edf2f4;
   --catskill-white: #edf6f9;
-  --soft-beige: #f2e9e1;
+  --bg-color: #fff;
 
   --main-font: "Montserrat";
   --secondary-font: "Dancing Script", cursive;
@@ -24,7 +24,7 @@ body {
 
 body {
   font-family: var(--main-font);
-  background-color: var(--soft-beige);
+  background-color: var(--bg-color);
 }
 
 .main-container {

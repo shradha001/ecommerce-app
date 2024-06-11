@@ -6,7 +6,7 @@
   text-align: center;
   z-index: 999;
   height: 90px;
-  background-color: var(--soft-beige);
+  background-color: var(--bg-color);
   padding-bottom: 13px;
 }
 
