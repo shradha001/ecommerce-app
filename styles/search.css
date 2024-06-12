@@ -84,8 +84,7 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  padding-top: 18px;
-  padding-left: 5px;
+  padding: 10px;
 }
 
 .search-list-item:hover {

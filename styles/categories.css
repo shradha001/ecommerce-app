@@ -1,10 +1,13 @@
 .categories-container {
   display: flex;
   gap: 10px;
-  width: 350px;
+  width: 344px;
   height: 120px;
   margin-top: 20px;
   overflow-x: auto;
+  padding-top: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .categories-container::-webkit-scrollbar {
@@ -28,10 +31,13 @@
   border-radius: 50%;
   filter: drop-shadow(1px 1px 2px grey);
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .sub-category-img-selected {
-  filter: drop-shadow(1px 1px 2px var(--deep-carmine-park));
+  border: 1px solid black;
+  padding: 3px;
+  background-color: white;
 }
 
 .category-title {
