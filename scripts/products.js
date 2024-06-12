@@ -49,7 +49,7 @@ const constructProductCard = (data) => {
   //PRODUCT PRICE
   const priceEl = document.createElement("p");
   priceEl.classList.add("product-price");
-  priceEl.textContent = `$${data?.price}`;
+  priceEl.textContent = data?.price;
 
   //PRODUCT RATINGS
   const productRating = data?.ratings;
