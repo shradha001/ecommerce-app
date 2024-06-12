@@ -27,6 +27,10 @@ body {
   background-color: var(--bg-color);
 }
 
+p {
+  margin: 0;
+}
+
 .main-container {
   width: 100%;
   display: flex;

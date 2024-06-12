@@ -1,0 +1,42 @@
+.developed-by-text-container {
+  visibility: hidden;
+  color: var(--blue-whale);
+  display: flex;
+  flex-direction: column;
+  font-size: 9px;
+  position: fixed;
+  right: 12px;
+  bottom: 10px;
+}
+
+.developed-by-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  padding-bottom: 2px;
+}
+
+.developer-link {
+  text-decoration: none;
+  color: var(--blue-whale);
+  cursor: pointer;
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11px;
+  text-decoration: underline;
+}
+
+.developer-img {
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+}
+
+@media screen and (min-width: 1200px) {
+  .developed-by-text-container {
+    visibility: visible;
+  }
+}
